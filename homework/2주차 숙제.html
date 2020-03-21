@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Webpage Title -->
+    <title>고래밥 쇼핑물</title>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+
+
+    <style>
+        img {
+            border-radius: 10px;
+        }
+
+
+
+        .aa {
+            width: 700px;
+            height: 600px;
+            margin: 50px auto 50px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Nanum Pen Script', cursive;
+
+
+        }
+
+        .bb {
+            width: 700px;
+            margin auto o auto o;
+        }
+    </style>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+        function hey() {
+            let name = $('#name').val()
+            let score = $('#inputGroupSelect01').val()
+            let address = $('#address').val()
+            let number = $('#number').val()
+            var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+
+            if (name == '') {
+                alert('이름은 써야지!')
+                $('#name').focus()
+            } else if (score == '--수량을 선택하세요--') {
+                alert('수량은 정해야지!')
+                $('#inputGroupSelect01').focus()
+            } else if (address == '') {
+                alert('주소는 써야지!')
+                $('#address').focus()
+            } else if (number == '') {
+                alert('핸드폰 번호는 써야지!')
+                $('number').focus()
+            } else if (!regExp.test(number)) {
+                alert('양식에맞게!')
+            } else if (regExp.test(number)) {
+                alert('주문완료!')
+                $('#name').val('')
+                $('#inputGroupSelect01').val('--수량을 선택하세요--')
+                $('#address').val('')
+                $('#number').val('')
+            }
+        }
+
+
+
+    </script>
+
+</head>
+
+<body>
+    <div class="aa">
+        <div class="bb">
+            <img src="https://www.ktnbm.co.kr/news/photo/201903/30145_40221_1610.jpg" width=700px, height=400px>
+            <p>
+                <h3> 로마를 경유하는 이탈리아 여행 <span style="font-size:20px;">1ticket:1000$</span></h3>
+                <h5> 삶에 지치고 떠나고 싶을 때, 혼자만의 시간이 필요할 때, 당신에게는 지금 여행이 필요합니다.</h5>
+            </p>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">주문자 이름</span>
+            </div>
+            <input id="name" type="text" class="form-control" placeholder="" aria-label=""
+                aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">수량</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>--수량을 선택하세요--</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">주소</span>
+            </div>
+            <input id=address type="text" class="form-control" placeholder="" aria-label=""
+                aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">전화번호</span>
+            </div>
+            <input id=number type="text" class="form-control" placeholder="" aria-label=""
+                aria-describedby="basic-addon1">
+        </div>
+        <button onclick="hey()" type="submit" class="btn btn-primary">주문하기</button>
+
+    </div>
+</body>
+
+</html>
