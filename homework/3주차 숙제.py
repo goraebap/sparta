@@ -10,9 +10,9 @@ songs = soup.select('#body-content > div.newest-list > div > table > tbody > tr.
 
 rank = 1
 for song in songs:
-    a_tag = song.select_one('td.info > a.title ellipsis')
+    a_tag = song.select_one('td.info > a.title')
     if a_tag is not None:
         title = a_tag.text
-        artist = song.select_one('td.info > a.artist ellipsis').text
-        print(rank,title,artist)
+        artist = song.select_one('td.info > a.artist').text
+        print(rank,title.strip(),artist)
         rank += 1
